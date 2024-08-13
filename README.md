@@ -20,7 +20,7 @@ The architecture of this Spring Boot Batch Processing application revolves aroun
 - **ItemWriter**: Writes the processed data to the destination.
 - **TaskExecutor**: Manages asynchronous tasks to enhance performance.
 
-![Batch Processing Architecture](/path/to/architecture/image)
+![Batch Processing Architecture](/images/DetailedArchitecture.png)
 
 The system is designed to leverage asynchronous tasks, enabling it to handle large datasets more efficiently by paralleling multiple parts of the process.
 
