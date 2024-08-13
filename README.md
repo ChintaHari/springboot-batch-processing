@@ -124,6 +124,29 @@ public Job runJob() {
             .build();
 }
 ```
+
+## Understanding Spring Batch Metadata Tables
+
+When the Spring Boot Batch Processing application starts, Spring Batch automatically creates several metadata tables alongside the application-specific entities. These tables are crucial for managing and monitoring the state of batch operations within the application. Here's why they are essential:
+
+- **Metadata Tables and Their Significance:**
+  - `batch_job_execution`: Records the details of each job execution.
+  - `batch_job_execution_context`: Stores the context data (like execution parameters) for job executions.
+  - `batch_job_execution_params`: Holds parameters used by job instances.
+  - `batch_job_execution_seq`: Sequence table for generating primary keys for job executions.
+  - `batch_job_instance`: Maintains information about each distinct job configuration.
+  - `batch_job_seq`: Sequence table for generating primary keys for job instances.
+  - `batch_step_execution`: Contains details about each step within a job execution.
+  - `batch_step_execution_context`: Stores context information related to step executions.
+  - `batch_step_execution_seq`: Sequence table for generating primary keys for step executions.
+
+### Why Are These Tables Used?
+
+These tables are fundamental to the framework’s ability to restart a job from a point of failure, track job histories, and correlate job executions with their respective outcomes. By leveraging these metadata tables, Spring Batch offers robust support for managing complex batch processing operations, ensuring consistency and recoverability in case of failures. The persistence of such data also facilitates auditing and monitoring of job and step executions, proving invaluable for maintaining the integrity and efficiency of batch operations.
+
+This framework's architecture not only provides out-of-the-box mechanisms for managing job states but also enhances the application’s capability to perform large-scale data processing tasks within enterprise environments.
+
+
 ## Testing with Postman
 
 ### Testing without Asynchronous Tasks
