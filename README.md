@@ -154,11 +154,19 @@ This framework's architecture not only provides out-of-the-box mechanisms for ma
 1. **Set up a Postman request** to trigger the batch process. Configure a POST request pointing to the endpoint `/job/start`.
 2. **Send the request** and measure the time taken for the batch process to complete using Postman's built-in timer.
 
+![Synchronous Run](/images/Synchronous.png)
+
+
 ### Testing with Asynchronous Tasks
 
 1. **Enable the asynchronous tasks** in the configuration by setting the concurrency limit on the `taskExecutor`.
 2. **Send the same request** as above in Postman.
 3. **Observe the reduction in time taken** to process the same amount of records due to parallel processing.
+![Asynchronous Run](/images/Asynchronous.png)
+
+### Data in MySQL Workbench
+
+![Data](/images/Data.png)
 
 This standard process and architecture ensure that the Spring Boot application is scalable, efficient, and suitable for enterprise-level batch processing tasks.
 
